@@ -1,0 +1,23 @@
+{% extends "intern_blog/base.html"%}
+
+{%block content%}
+<div class="container">
+<h1>{{object.title}}</h1>
+<small class="text-muted">{{object.date}}</small>
+-{{object.author}}
+{% if user.is_authenticated%}
+{% if object.author == user%}
+<a class= "btn btn-danger btn-sm" href="{% url 'PostDelete' object.id %}">Delete Post</a></button>
+{%endif%}
+{% endif %}
+<div class="container align-center">
+<img src="{{object.photo}}"> 
+</div>
+<p>
+{{post.content}}
+</p>
+
+
+</div>
+
+{% endblock content%}

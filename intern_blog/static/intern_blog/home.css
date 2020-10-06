@@ -1,0 +1,68 @@
+body{
+  padding-top:70px;
+}
+
+.jumbotron{
+color:#2c3e50;
+}
+
+.navbar-inverse{
+  background-color: #2c3e50;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+  color: white;
+}
+
+.navbar-inverse .navbar-header>a{
+  color: white;
+}
+.center-fill-container {
+  overflow: hidden;
+  position: relative;
+  margin: 0 ;
+  
+  /* object-fit: cover; */
+}
+
+.cover-image{
+  height:340px
+}
+
+.tinted img{
+  opacity:0.6
+}
+.img-container{
+  height:100%;
+  overflow:hidden
+}
+
+.flex-container{
+  display: flex;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row wrap;
+  
+  /* Then we define how is distributed the remaining space */
+  justify-content: flex-start;
+  
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.flex-item {
+padding: 5px;
+  width: 350px;
+  /* height: 150px; */
+  margin-top: 10px;
+}
+
+.img-center-fill{position:absolute;width:100%}
+.img-center-fill.tall{width:100%}
+
+.center-both{position:absolute;-ms-transform:translate(-50%, 50%);-webkit-transform:translate(-50%, 50%);transform:translate(-50%, 50%);left:50%;bottom:50%}

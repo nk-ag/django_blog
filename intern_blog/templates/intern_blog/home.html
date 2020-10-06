@@ -1,0 +1,60 @@
+
+{% extends "intern_blog/base.html"%}
+
+{%block content%}
+    
+        <!-- <div class="jumbotron">
+            <h1><i class="fas fa-camera-retro"></i>Blog!</h1>
+             <p>Blog </p>
+        </div> -->
+        {% if posts %}
+        {% with posts|first as fpost%}
+        <div id="header" class="container category-header">
+            <div class="row">
+                <div class="col-md-8  cover-image center-fill-container">
+        
+                    <div class="img-container">
+                        <img class="center-both img-center-fill tall" src="{{fpost.photo}}" alt="">
+                    </div>
+        
+                </div>
+        
+                <div class="col-md-4 cover-details">
+                    <div class="cover-title">
+                        <a href="{% url 'PostDetail' fpost.id %}" class="cover-link">
+                            <h1 class="title">{{fpost.title}}</h1>
+                        </a>
+                    </div>
+                    <div class="date">{{fpost.date}}</div>
+                    <em>~{{fpost.author}}</em>
+                    <div class="cover-excerpt">
+                        {{fpost.content|truncatechars:125}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endwith%}
+        <div class="flex-container">
+    {% for post in posts|slice:"1:"%}
+
+            <div class="col-sm-6 flex-item">
+                <a href="{% url 'PostDetail' post.id %}">
+                <div class="thumbnail">
+                    <img
+                        src={{post.photo}}>
+                </div>
+                <h2>{{post.title}}</h2>
+                </a>
+                <em> {{post.author}} on {{post.date}} </em>
+                <p> {{post.content|truncatechars:100}} </p>
+                
+            </div>
+    {% endfor%}
+        </div>
+    {% else %}
+        <div>
+            <h2> No Posts Yet!</h2>
+        </div>
+    {% endif %}
+    
+{% endblock content%}
